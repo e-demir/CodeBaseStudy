@@ -1,10 +1,8 @@
-﻿using System;
-using System.Text;
-using Ardalis.GuardClauses;
+﻿using System.Text;
 
-class Program
+public class RoverForNASA
 {
-    static void Main()
+    public static void Main()
     {
         bool addMoreRovers = true;
         StringBuilder sb = new();
@@ -60,7 +58,7 @@ class Program
         Console.WriteLine(sb.ToString());
     }
 
-    static void MoveRover(int plateauX, int plateauY, ref int roverX, ref int roverY, ref char roverDirection, string instructions)
+    public static void MoveRover(int plateauX, int plateauY, ref int roverX, ref int roverY, ref char roverDirection, string instructions)
     {
         foreach (char instruction in instructions)
         {
@@ -85,7 +83,7 @@ class Program
         }
     }
 
-    static void RotateLeft(ref char direction)
+    public static void RotateLeft(ref char direction)
     {
         switch (direction)
         {
@@ -107,7 +105,7 @@ class Program
         }
     }
 
-    static void RotateRight(ref char direction)
+    public static void RotateRight(ref char direction)
     {
         switch (direction)
         {
@@ -129,7 +127,7 @@ class Program
         }
     }
 
-    static void MoveForward(int plateauX, int plateauY, ref int roverX, ref int roverY, char direction)
+    public static void MoveForward(int plateauX, int plateauY, ref int roverX, ref int roverY, char direction)
     {
         switch (direction)
         {
@@ -155,7 +153,7 @@ class Program
         }
     }
 
-    static bool TryParseCoordinates(string input, out int x, out int y)
+    public static bool TryParseCoordinates(string input, out int x, out int y)
     {
         x = 0;
         y = 0;
@@ -169,7 +167,7 @@ class Program
         return false;
     }
 
-    static bool TryParseRoverPosition(string input, out int x, out int y, out char direction)
+    public static bool TryParseRoverPosition(string input, out int x, out int y, out char direction)
     {
         x = 0;
         y = 0;
